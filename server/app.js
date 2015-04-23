@@ -5,10 +5,13 @@
 'use strict';
 
 // Set default node environment to development
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+// process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var express = require('express');
 var mongoose = require('mongoose');
+var prettyjson = require('prettyjson');
+var Zillow = require('node-zillow');
+var Converter=require("csvtojson").core.Converter;
 var config = require('./config/environment');
 
 // Connect to database
