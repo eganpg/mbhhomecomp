@@ -1,0 +1,26 @@
+div(ng-include='"components/navbar/navbar.html"')
+
+header#banner.hero-unit
+  .container
+    h1() Let's Learn About MBH on Zillow
+    button(style="background-color: black;" ng-click="parse()") Get SalesForce Data
+
+    div(ng-repeat='r in response')
+      p {{r}}
+      button( style="background-color: black;" ng-click="goDetails(r.links[0].homedetails[0])") Details
+      button( style="background-color: black;" ng-click="graphs(r.links[0].graphsanddata[0])") Graphs and Data
+      button( style="background-color: black;" ng-click="map(r.links[0].mapthishome[0])") Map This Home
+      button( style="background-color: black;" ng-click="find(r.links[0].comparables[0])") Find Comps
+      //- br
+      br 
+    button(style="background-color: black;" ng-click="mapthis()") Put this data on the map  
+    div(ng-repeat='j in jsonObj')
+
+      p {{j}}
+        button(ng-click="getzillow(j)" style="background-color: black;") get zillow data
+
+    
+    
+
+.container
+  
